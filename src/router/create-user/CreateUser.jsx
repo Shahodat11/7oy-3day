@@ -1,20 +1,29 @@
 import React, {useState} from 'react'
 import "./CreateUser.css"
+import { useDispatch } from 'react-redux'
+import { addToUsers} from "../../context/usersSlice"
 
 function CreateUser() {
   const [name, setName] = useState("")
   const [profession, setProfession] = useState("")
   const [age, setAge] = useState("")
   const [gender, setGender] = useState("")
+  const dispatch = useDispatch()
+
   const handleSubmit = (e)=>{
     e.preventDefault()
     let newUser ={
+      id: new Date().getTime(),
       name,
       profession,
       age:+age,
       gender
     }
-    console.log(newUser);
+    dispatch(addToUsers(newUser))
+    setName("")
+    setGender("")
+    setAge("")
+    setProfession("")
   }
   return (
     <div className='create__user'>

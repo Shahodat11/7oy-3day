@@ -20,6 +20,7 @@ function CreateUser() {
       gender
     }
     dispatch(addToUsers(newUser))
+    
     setName("")
     setGender("")
     setAge("")

@@ -11,7 +11,7 @@ function Users({data}) {
     <div className='users__wrapper'>
       {
         data?.map(user =>        
-        <div className="users__card">
+        <div key={user.id} className="users__card">
             <img src={user.gender === "male" ? male : female } alt="" />
             <h2>{user.name}</h2>
             <p>{user.profession}</p>

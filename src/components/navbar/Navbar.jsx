@@ -10,7 +10,7 @@ function Navbar() {
         <h2>Redux Toolkit</h2>
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/create-user"}>Create user</NavLink>
-        <NavLink to={"/all-users"}>All users <sup>{users.length}</sup></NavLink>
+        <NavLink to={"/all-users"}>All users <sup>{users?.length}</sup></NavLink>
     </div>
   )
 }
